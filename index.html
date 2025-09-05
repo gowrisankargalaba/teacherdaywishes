@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>"A World of Thanks":"Recognizing the endless commitment of teachers who make a world of difference every day."</title>
+    <link rel="shortcut icon" href="teacher5.png">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <style>
+        body{
+            background: linear-gradient(90deg, #cad3fc, #ddf9c3, #efee9b);
+            font-family: Book Antiqua;
+            margin-top: 100px;
+        
+        
+        }
+        p{
+            color: darkblue;
+        }
+    </style>
+    <script>
+        var regExp = /^(7997182627|9866249110|9032562102|9866123698|9441977363|9866793628|9704212516|9959897906|9705815582|9676893481|)$/;
+
+    
+        function submitclick(){
+            document.getElementById("Date").value="";
+            document.getElementById("Details").style.display="block";
+        }
+        function verify(){
+            var date=document.getElementById("Date").value;
+            var button=document.getElementById("submitbutton");
+            if(date.match(regExp)){
+                button.disabled=false;
+            }else{
+                button.disabled=true;
+            }
+        }
+    </script>
+    <script>
+    function openMemories() {
+        window.location.href = "2024memories.html";
+    }
+</script>
+</head>
+<body class="container-fluid">
+    <div>
+        <p><b>To help us personalize your experience and provide appropriate greetings, could you please enter your Phone Number? Rest assured, your information will be kept confidential and used only for this purpose.</b></p>
+    </div>
+    <br>
+    <div class="input-group">
+        <button class="btn btn-primary"><span class="bi bi-person-fill"></span></button>
+        <input type="text" onkeyup="verify()" placeholder="Please enter your Phone Number" class="form-control" id="Date">
+        <button disabled class="btn btn-warning" onclick="submitclick()" id="submitbutton">Submit</button><br><br>
+    </div>
+   
+    <div style="margin-top: 20px; display: none;" id="Details">
+        <div style="text-align: center;">
+<div style="display: flex; gap: 15px; justify-content: center;">
+  <div class="card">
+    <img src="Knr sir.jpeg" class="card-img-top" alt="..." width="300" height="320">
+  </div>
+  <div class="card">
+    <img src="mastan.jpeg" class="card-img-top" alt="..." width="300" height="320">
+  </div>
+  <div class="card">
+    <img src="computersir.jpeg" class="card-img-top" alt="..." width="300" height="320">
+  </div>
+</div>
+
+            <p style="color: black; font-family: Monotype Corsiva; font-size: large; font-size: 25px;">"Happy Teacher's Day, KNR Sir, Mastan Sir And Veeranjanalu Sir! Your dedication, passion, and commitment to teaching inspire us every day. Thank you for being a wonderful guide and mentors!"</p>
+            <p style="color: black; font-family: Monotype Corsiva; font-size: large; font-size: 25px; color:red;">"Hello Sir, please click the button below to receive heartfelt wishes from your students!"</p>
+            <button class="btn btn-primary" onclick="clickhere()" id="button">Start</button>
+            <button class="btn btn-danger" onclick="openMemories()">Our Memories</button>
+    </div>
+ </div>
+    <audio id="studentaudio1" src="Sravani.ogg"></audio>
+    <audio id="studentaudio2" src="gowri.ogg"></audio>
+    <audio id="studentaudio3" src="ravi.mp4"></audio>
+    <audio id="studentaudio4" src="hameda.ogg"></audio>
+    <script>
+        function clickhere() {
+            var button = document.getElementById("button");
+            var audios = [
+                document.getElementById("studentaudio1"),
+                document.getElementById("studentaudio2"),
+                document.getElementById("studentaudio3"),
+                document.getElementById("studentaudio4"),
+                
+            ];
+
+            if (button.innerHTML == "Start") {
+                button.innerHTML = "Stop";
+                button.style.backgroundColor = "red";
+                button.style.color = "white";
+                
+                function playAudioSequence(index) {
+                    if (index < audios.length) {
+                        var audio = audios[index];
+                        audio.play();
+                        audio.onended = function() {
+                            playAudioSequence(index + 1);
+                        };
+                    } else {
+                        button.innerHTML = "Start";
+                        button.style.backgroundColor = "blue";
+                        button.style.color = "white";
+                    }
+                }
+
+                playAudioSequence(0);
+
+            } else {
+                button.innerHTML = "Start";
+                button.style.backgroundColor = "blue";
+                button.style.color = "white";
+                
+                audios.forEach(function(audio) {
+                    audio.pause();
+                });
+            }
+        }
+    </script>
+    <script src="jquery.js"></script>
+    <script src="bootstrap.bundle.js"></script>
+</body>
+</html>
